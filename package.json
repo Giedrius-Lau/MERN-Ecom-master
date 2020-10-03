@@ -1,19 +1,23 @@
 {
-  "name": "mern-e-commerce",
+  "name": "mern-ecom-master",
   "version": "1.0.0",
+  "description": "Ecommerce website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon backend/server"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/giedriuslau/MERN-E-commerce.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Giedrius Lauruška",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/giedriuslau/MERN-E-commerce/issues"
   },
   "homepage": "https://github.com/giedriuslau/MERN-E-commerce#readme",
-  "description": ""
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
 }
