@@ -4,7 +4,10 @@
   "description": "Ecommerce website",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon backend/server"
+    "start": "nodemon backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -18,7 +21,11 @@
   "homepage": "https://github.com/giedriuslau/MERN-E-commerce#readme",
   "dependencies": {
     "axios": "^0.20.0",
-    "express": "^4.17.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
     "nodemon": "^2.0.4"
   }
 }

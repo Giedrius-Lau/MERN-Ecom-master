@@ -5,7 +5,6 @@ import { Row, Col, Image, ListGroup, Button } from 'react-bootstrap';
 import Rating from '../components/rating/Rating';
 
 const ProductScreen = ({ match }) => {
-  console.log(match);
   const [product, setProduct] = useState({});
 
   useEffect(() => {
@@ -15,7 +14,7 @@ const ProductScreen = ({ match }) => {
     };
 
     fetchProduct();
-  });
+  }, [match]);
 
   return (
     <>
