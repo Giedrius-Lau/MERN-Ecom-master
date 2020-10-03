@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
-import products from '../products';
+import { Row, Col, Image, ListGroup, Button } from 'react-bootstrap';
 import Rating from '../components/rating/Rating';
 
 const ProductScreen = ({ match }) => {
+  console.log(match);
   const [product, setProduct] = useState({});
 
   useEffect(() => {
@@ -16,7 +15,7 @@ const ProductScreen = ({ match }) => {
     };
 
     fetchProduct();
-  }, []);
+  });
 
   return (
     <>
@@ -70,7 +69,5 @@ const ProductScreen = ({ match }) => {
     </>
   );
 };
-
-ProductScreen.propTypes = {};
 
 export default ProductScreen;
