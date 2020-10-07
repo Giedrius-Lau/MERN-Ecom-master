@@ -1,6 +1,5 @@
 import express from 'express';
 import asyncHandler from 'express-async-handler';
-import products from '../data/products.js';
 import Product from '../models/Product.js';
 const router = express.Router();
 
@@ -20,7 +19,8 @@ router.get(
     if (product) {
       res.json(product);
     } else {
-      res.status(404).json({ message: 'Product not found' });
+      res.status(404);
+      throw new Error('Product not found');
     }
   })
 );
