@@ -1,16 +1,15 @@
+import axios from 'axios';
 import {
   PRODUCT_LIST_FAIL,
   PRODUCT_LIST_SUCCESS,
   PRODUCT_LIST_REQUEST,
 } from '../constants/productConstants';
-import ReduxThunk from 'redux-thunk';
-import axios from 'axios';
+
 export const listProducts = () => async (dispatch) => {
   try {
-    dispatch({ PRODUCT_LIST_REQUEST });
+    dispatch({ type: PRODUCT_LIST_REQUEST });
 
     const { data } = await axios.get('/api/products');
-
     dispatch({
       type: PRODUCT_LIST_SUCCESS,
       payload: data,
