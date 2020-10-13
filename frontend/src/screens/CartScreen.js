@@ -18,11 +18,13 @@ const CartScreen = ({ match, location, history }) => {
   useEffect(() => {
     if (productId) {
       dispatch(addToCart(productId, qty));
+      history.push('/cart');
     }
   }, [dispatch, productId, qty]);
 
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
+    history.push('/cart');
   };
 
   const checkoutHandler = () => {
