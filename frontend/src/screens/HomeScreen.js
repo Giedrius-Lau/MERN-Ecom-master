@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Col, Row } from 'react-bootstrap';
 import { listProducts } from '../actions/productListActions';
+import TextTransitions from '../components/transitions/TextTransitions';
 
 import Product from '../components/product/Product';
 import Loader from '../components/Loader';
@@ -19,7 +20,7 @@ const HomeScreen = () => {
 
   return (
     <>
-      <h1>Latest producst</h1>
+      <TextTransitions>Latest producst</TextTransitions>
       {loading ? (
         <Loader></Loader>
       ) : error ? (
