@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Col, Row } from 'react-bootstrap';
 import { listProducts } from '../actions/productListActions';
 import TextTransitions from '../components/transitions/TextTransitions';
+import Fade from 'react-reveal/Fade';
 
 import Product from '../components/product/Product';
 import Loader from '../components/Loader';
@@ -26,15 +27,17 @@ const HomeScreen = () => {
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <Row>
-          {products.map((product) => {
-            return (
-              <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                <Product product={product}></Product>
-              </Col>
-            );
-          })}
-        </Row>
+        <Fade cascade>
+          <Row>
+            {products.map((product) => {
+              return (
+                <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+                  <Product product={product}></Product>
+                </Col>
+              );
+            })}
+          </Row>
+        </Fade>
       )}
     </>
   );
