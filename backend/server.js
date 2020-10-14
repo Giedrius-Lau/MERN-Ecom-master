@@ -2,7 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import colors from 'colors';
-import product from './routes/product.js';
+import productRoutes from './routes/productRoutes.js';
 import { notFound, errorHandler } from './middleware/error.js';
 
 dotenv.config();
@@ -10,7 +10,7 @@ dotenv.config();
 connectDB();
 const app = express();
 
-app.use('/api/products', product);
+app.use('/api/products', productRoutes);
 
 // Error Handler Middleware
 app.use(notFound);
