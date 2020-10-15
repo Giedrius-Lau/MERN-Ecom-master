@@ -1,21 +1,24 @@
 import asyncHandler from 'express-async-handler';
-import Product from '../models/UserModel.js';
+import User from '../models/UserModel.js';
 
-const getProducts = asyncHandler(async (req, res) => {
-  const products = await Product.find({});
+const authUser = asyncHandler(async (req, res) => {
+  const { email, password } = req.body;
 
-  res.json(products);
-});
+  const user = await User.findOne({ email });
 
-const getProductById = asyncHandler(async (req, res) => {
-  const product = await Product.findById(req.params.id);
-
-  if (product) {
-    res.json(product);
+  console.log(await user.matchPassword(password)))
+  if (user && (await user.matchPassword(password))) {
+    res.json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+      token: null,
+    });
   } else {
-    res.status(404);
-    throw new Error('Product not found');
+    res.status(401);
+    throw new Error('Invalid email or password');
   }
 });
 
-export { getProducts, getProductById };
+export { authUser };
