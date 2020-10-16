@@ -34,10 +34,12 @@ const ProductScreen = ({ history, match }) => {
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <Fade cascade>
+        <Fade duration={300} cascade>
           <Row>
             <Col md={6}>
-              <Image src={product.image} alt={product.name} fluid></Image>
+              <Fade duration={1000} bottom>
+                <Image src={product.image} alt={product.name} fluid></Image>
+              </Fade>
             </Col>
             <Col md={3}>
               <ListGroup variant='flush'>

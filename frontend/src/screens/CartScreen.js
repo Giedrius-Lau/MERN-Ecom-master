@@ -45,7 +45,7 @@ const CartScreen = ({ match, location, history }) => {
           ) : (
             <ListGroup variant='flush'>
               {cartItems.map((item) => (
-                <Fade cascade>
+                <Fade duration={300} cascade>
                   <ListGroup.Item key={item.product}>
                     <Row>
                       <Col md={2}>

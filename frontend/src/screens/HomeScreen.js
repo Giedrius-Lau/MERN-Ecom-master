@@ -27,7 +27,7 @@ const HomeScreen = () => {
       ) : error ? (
         <Message variant='danger'>{error}</Message>
       ) : (
-        <Fade cascade>
+        <Fade duration={300} cascade>
           <Row>
             {products.map((product) => {
               return (
