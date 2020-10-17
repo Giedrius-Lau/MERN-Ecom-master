@@ -37,7 +37,7 @@ const ProductScreen = ({ history, match }) => {
         <Fade duration={300} cascade>
           <Row>
             <Col md={6}>
-              <Fade duration={1000} bottom>
+              <Fade duration={1000}>
                 <Image src={product.image} alt={product.name} fluid></Image>
               </Fade>
             </Col>
