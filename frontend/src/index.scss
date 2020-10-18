@@ -186,3 +186,14 @@ main {
 .carousel-control-prev-icon {
   display: none;
 }
+
+.btn:not(:disabled):not(.disabled) {
+  font-size: 1rem;
+  padding: 0.6rem 2.5rem;
+}
+
+.btn.btn-primary {
+  background: #de0111;
+  border-radius: 50px;
+  text-transform: capitalize;
+}
