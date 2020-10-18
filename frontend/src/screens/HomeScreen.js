@@ -8,6 +8,7 @@ import Fade from 'react-reveal/Fade';
 import Product from '../components/product/Product';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
+import CarouselBlock from '../components/CarouselBlock';
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
@@ -21,7 +22,8 @@ const HomeScreen = () => {
 
   return (
     <>
-      <TextTransitions>Latest producst</TextTransitions>
+      <CarouselBlock></CarouselBlock>
+      <TextTransitions>Latest products</TextTransitions>
       {loading ? (
         <Loader></Loader>
       ) : error ? (
