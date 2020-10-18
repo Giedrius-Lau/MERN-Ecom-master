@@ -29,13 +29,13 @@ const TextTransitions = (props) => {
   }, []);
   return (
     <div>
-      <h1 class='ml1'>
+      <h4 class='ml1'>
         <span class='text-wrapper'>
           <span class='line line1'></span>
           <span class='letters'>{props.children}</span>
           <span class='line line2'></span>
         </span>
-      </h1>
+      </h4>
     </div>
   );
 };

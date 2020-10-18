@@ -1,6 +1,8 @@
 .ml1 {
   font-weight: 900;
-  font-size: 3.5em;
+  font-size: 2.5em;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .ml1 .letter {
@@ -20,7 +22,6 @@
   opacity: 0;
   position: absolute;
   left: 0;
-  height: 3px;
   width: 100%;
   background-color: #000000;
   transform-origin: 0 0;
