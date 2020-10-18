@@ -8,6 +8,7 @@ body {
 
 main {
   min-height: 80vw;
+  margin-top: 150px;
 }
 
 .sk-chase {
@@ -103,9 +104,16 @@ main {
 
 .card {
   border: 0;
-  box-shadow: 0 0 20px #10101014;
   border-radius: 4px !important;
-  padding: 5px !important;
+  padding: 0 !important;
+  margin-bottom: 100px !important;
+}
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0.75rem 0;
 }
 
 .navbar {
@@ -114,9 +122,38 @@ main {
 
 .logo {
   font-family: 'Permanent Marker', cursive;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .small-logo {
   font-family: 'Permanent Marker', cursive;
+}
+
+.navbar {
+  padding: 0.5rem 1rem;
+  background: #ffffff;
+  box-shadow: 0 0 30px #00000010;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #000000;
+}
+
+@media (min-width: 1200px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+    max-width: 1440px;
+  }
+}
+
+.footer {
+  background: #1b1b1b;
+  color: #ffffff;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
 }
