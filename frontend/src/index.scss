@@ -8,7 +8,7 @@ body {
 
 main {
   min-height: 80vw;
-  margin-top: 150px;
+  margin-top: 140px;
 }
 
 .sk-chase {
@@ -106,7 +106,6 @@ main {
   border: 0;
   border-radius: 4px !important;
   padding: 0 !important;
-  margin-bottom: 100px !important;
 }
 
 .card-body {
@@ -161,7 +160,6 @@ main {
 .carousel {
   margin-top: -40px;
   margin-bottom: 100px;
-  max-height: 700px;
   overflow: hidden;
 }
 
@@ -196,4 +194,32 @@ main {
   background: #de0111;
   border-radius: 50px;
   text-transform: capitalize;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 100%;
+}
+
+.narrow-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
 }

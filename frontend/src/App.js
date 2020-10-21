@@ -13,9 +13,8 @@ const App = () => {
   return (
     <Router onUpdate={() => window.scrollTo(0, 0)}>
       <ScrollToTop />
-
       <Header />
-      <main className='py-3'>
+      <main>
         <Container>
           <Route path='/' component={HomeScreen} exact />
           <Route path='/product/:id' component={ProductScreen} />
