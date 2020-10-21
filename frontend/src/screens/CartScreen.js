@@ -23,6 +23,7 @@ const CartScreen = ({ match, location, history }) => {
       dispatch(addToCart(productId, qty));
       history.push('/cart');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, productId, qty]);
 
   const removeFromCartHandler = (id) => {
