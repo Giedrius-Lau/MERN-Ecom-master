@@ -4,17 +4,18 @@ import thunk from 'redux-thunk';
 
 import { cartReducer } from './reducers/cartReducers';
 import { productListReducer, productDetailsReducer } from './reducers/productListReducers';
+import { userLoginReducer } from './reducers/userReducers';
 
 const reducer = combineReducers({
-  productList: productListReducer,
-  productDetails: productDetailsReducer,
-  cart: cartReducer,
+    productList: productListReducer,
+    productDetails: productDetailsReducer,
+    cart: cartReducer,
+    userLogin: userLoginReducer,
 });
 
 const cartItemsFromStorage = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
-console.log(cartItemsFromStorage);
 const initialState = {
-  cart: { cartItems: cartItemsFromStorage },
+    cart: { cartItems: cartItemsFromStorage },
 };
 
 const middleware = [thunk];
