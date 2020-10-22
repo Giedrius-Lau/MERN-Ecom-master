@@ -6,32 +6,28 @@ import Rating from '../rating/Rating';
 import './Product.scss';
 
 const Product = ({ product }) => {
-  return (
-    <Card className='my-3 p-3 rounded'>
-      <Link to={`/product/${product._id}`}>
-        <Card.Img src={product.image} variant='top'></Card.Img>
-      </Link>
-      <Card.Body>
-        <div>
-          <Link to={`/product/${product._id}`}>
-            <Card.Title as='div'>
-              <strong>{product.name}</strong>
-            </Card.Title>
-          </Link>
-          <Card.Text as='div'>
-            <Rating value={product.rating} color={'gold'}></Rating>
-          </Card.Text>
-        </div>
-        <Card.Text as='h3' style={{ marginLeft: '10px' }}>
-          ${product.price}
-        </Card.Text>
-      </Card.Body>
-    </Card>
-  );
+    return (
+        <Link to={`/product/${product._id}`}>
+            <Card className='my-3 product-link'>
+                <Card.Img src={product.image} variant='top'></Card.Img>
+                <Card.Body>
+                    <div>
+                        <Card.Text as='div'>
+                            <Rating value={product.rating} color={'gray'}></Rating>
+                        </Card.Text>
+                        <Card.Title as='div'>
+                            <span>{product.name}</span>
+                        </Card.Title>
+                    </div>
+                    <Card.Text>${product.price}</Card.Text>
+                </Card.Body>
+            </Card>
+        </Link>
+    );
 };
 
 Product.propTypes = {
-  product: PropTypes.object.isRequired,
+    product: PropTypes.object.isRequired,
 };
 
 export default Product;

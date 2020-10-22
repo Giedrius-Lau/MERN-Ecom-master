@@ -11,38 +11,38 @@ import Message from '../components/Message';
 import CarouselBlock from '../components/CarouselBlock';
 
 const HomeScreen = () => {
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-  const productList = useSelector((state) => state.productList);
-  const { loading, error, products } = productList;
+    const productList = useSelector((state) => state.productList);
+    const { loading, error, products } = productList;
 
-  useEffect(() => {
-    dispatch(listProducts());
-  }, [dispatch]);
+    useEffect(() => {
+        dispatch(listProducts());
+    }, [dispatch]);
 
-  return (
-    <>
-      <CarouselBlock></CarouselBlock>
-      <TextTransitions>Latest products</TextTransitions>
-      {loading ? (
-        <Loader></Loader>
-      ) : error ? (
-        <Message variant='danger'>{error}</Message>
-      ) : (
-        <Fade duration={300} cascade>
-          <Row>
-            {products.map((product) => {
-              return (
-                <Col key={product._id} sm={12} md={6} lg={4} xl={4}>
-                  <Product product={product}></Product>
-                </Col>
-              );
-            })}
-          </Row>
-        </Fade>
-      )}
-    </>
-  );
+    return (
+        <>
+            <CarouselBlock></CarouselBlock>
+            <TextTransitions>Latest products</TextTransitions>
+            {loading ? (
+                <Loader></Loader>
+            ) : error ? (
+                <Message variant='danger'>{error}</Message>
+            ) : (
+                <Fade duration={300} cascade>
+                    <Row>
+                        {products.map((product) => {
+                            return (
+                                <Col key={product._id} sm={6} md={4} lg={3} xl={2}>
+                                    <Product product={product}></Product>
+                                </Col>
+                            );
+                        })}
+                    </Row>
+                </Fade>
+            )}
+        </>
+    );
 };
 
 export default HomeScreen;
