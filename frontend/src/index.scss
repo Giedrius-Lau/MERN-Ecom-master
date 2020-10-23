@@ -1,14 +1,63 @@
 @import './style/fonts/stylesheet.css';
 
+:root {
+    --primary-bg: #ffffff;
+    --primary-fg: #000;
+    --secondary-bg: #ffffff;
+    --secondary-fg: #555;
+    --primary-btn-bg: #000;
+    --primary-btn-fg: #fff;
+    --secondary-btn-bg: #ff0000;
+    --secondary-btn-fg: #ffff00;
+    --image-opacity: 1;
+}
+
+.dark-mode {
+    --primary-bg: #282c35;
+    --primary-fg: #fff;
+    --secondary-bg: #1e2129;
+    --secondary-fg: #aaa;
+    --primary-btn-bg: #ddd;
+    --primary-btn-fg: #222;
+    --secondary-btn-bg: #780404;
+    --secondary-btn-fg: #baba6a;
+    --image-opacity: 0.85;
+}
+
 body {
     font-family: 'tt_normsregular', Arial, sans-serif;
     font-weight: normal;
     font-style: normal;
+    background: var(--primary-bg);
+    color: var(--primary-fg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    color: var(--primary-fg);
+}
+
+a:hover,
+a:focus,
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+    color: var(--primary-fg);
+}
+
+.list-group-item {
+    background: var(--secondary-bg);
 }
 
 main {
     min-height: 80vw;
-    margin-top: 140px;
+    margin-top: 90px;
 }
 
 .sk-chase {
@@ -104,14 +153,17 @@ main {
 
 .product-link {
     border: 1px solid transparent;
+    min-height: 300px;
+    background: var(--secondary-bg);
 }
 
 .product-link:hover {
-    border: 1px solid #000000;
+    border: 1px solid var(--primary-fg);
 }
 
 a:hover {
     text-decoration: none;
+    color: var(--primary-fg);
 }
 
 .card {
@@ -131,13 +183,11 @@ a:hover {
     }
 }
 
-.navbar {
-    padding: 0.5rem 1rem;
-}
-
-.logo {
+.logo,
+.navbar-light .navbar-brand {
     font-family: 'Permanent Marker', cursive;
     font-size: 2.5rem;
+    color: var(--primary-fg);
 }
 
 .small-logo {
@@ -146,12 +196,25 @@ a:hover {
 
 .navbar {
     padding: 0.5rem 1rem;
-    background: #ffffff;
     box-shadow: 0 0 30px #00000010;
+    background: var(--secondary-bg) !important;
+
+    a {
+        color: var(--primary-fg);
+    }
+
+    .navbar-nav {
+        align-items: center;
+    }
+}
+
+.dark-mode {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: #000000;
+    color: var(--primary-fg);
 }
 
 @media (min-width: 1200px) {
@@ -173,6 +236,7 @@ a:hover {
     font-size: 16px;
 }
 .carousel-container {
+    margin-top: 140px;
     visibility: hidden;
 }
 
@@ -249,4 +313,14 @@ a:hover {
     max-width: 1200px;
     margin-right: auto;
     margin-left: auto;
+}
+
+// Product page
+.img-fluid {
+    object-fit: cover;
+    width: 100%;
+}
+// Cart page
+.cart {
+    margin-top: 110px;
 }
