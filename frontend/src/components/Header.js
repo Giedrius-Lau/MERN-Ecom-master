@@ -15,6 +15,11 @@ const Header = () => {
                     <Navbar.Toggle aria-controls='basic-navbar-nav' />
                     <Navbar.Collapse id='basic-navbar-nav'>
                         <Nav className='ml-auto'>
+                            <LinkContainer to='/products'>
+                                <Nav.Link>
+                                    <Icon.Search size={36}></Icon.Search>{' '}
+                                </Nav.Link>
+                            </LinkContainer>
                             <DarkMode></DarkMode>
                             <LinkContainer to='/login'>
                                 <Nav.Link>
