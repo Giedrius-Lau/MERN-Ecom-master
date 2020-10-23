@@ -1,13 +1,13 @@
-import React, { useEffect, useRef, createRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Carousel, Button } from 'react-bootstrap';
 import { Power2, TimelineMax, TweenMax } from 'gsap';
 
 const CarouselBlock = () => {
-    let carousel = React.useRef(null);
-    const carouselImage = React.useRef();
-    const carouselHeading = React.useRef(null);
-    const carouselParagraph = React.useRef();
-    const carouselButton = React.useRef();
+    let carousel = useRef(null);
+    const carouselImage = useRef();
+    const carouselHeading = useRef(null);
+    const carouselParagraph = useRef();
+    const carouselButton = useRef();
 
     useEffect(() => {
         TweenMax.to(carousel, { css: { visibility: 'visible' }, duration: 0 });

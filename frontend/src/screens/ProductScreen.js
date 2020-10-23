@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Row, Col, Image, ListGroup, Button, Form } from 'react-bootstrap';
-import { listProductsDetails } from '../actions/productListActions';
+import { listProductsDetails, listProducts } from '../actions/productListActions';
 import * as Icon from 'react-bootstrap-icons';
 import Fade from 'react-reveal/Fade';
 
@@ -10,6 +10,8 @@ import Rating from '../components/rating/Rating';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 import NarrowContainer from '../components/NarrowContainer';
+import ProductSlider from '../components/ProductSlider';
+import TextTransitions from '../components/transitions/TextTransitions';
 
 const ProductScreen = ({ history, match }) => {
     const [qty, setQty] = useState(1);
@@ -25,6 +27,13 @@ const ProductScreen = ({ history, match }) => {
     const addToCartHandler = () => {
         history.push(`/cart/${match.params.id}?qty=${qty}`);
     };
+
+    const productList = useSelector((state) => state.productList);
+    const { products } = productList;
+
+    useEffect(() => {
+        dispatch(listProducts());
+    }, [dispatch]);
 
     return (
         <>
@@ -107,6 +116,14 @@ const ProductScreen = ({ history, match }) => {
                                         </Button>
                                     </ListGroup.Item>
                                 </ListGroup>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+                                <TextTransitions>Similar products</TextTransitions>
+                            </Col>
+                            <Col>
+                                <ProductSlider products={products}></ProductSlider>
                             </Col>
                         </Row>
                     </Fade>

@@ -17,18 +17,18 @@ const Header = () => {
                         <Nav className='ml-auto'>
                             <LinkContainer to='/products'>
                                 <Nav.Link>
-                                    <Icon.Search size={36}></Icon.Search>{' '}
+                                    <Icon.Search size={26}></Icon.Search>{' '}
                                 </Nav.Link>
                             </LinkContainer>
                             <DarkMode></DarkMode>
                             <LinkContainer to='/login'>
                                 <Nav.Link>
-                                    <Icon.PersonFill size={36}></Icon.PersonFill>{' '}
+                                    <Icon.PersonFill size={26}></Icon.PersonFill>{' '}
                                 </Nav.Link>
                             </LinkContainer>
                             <LinkContainer to='/cart'>
                                 <Nav.Link>
-                                    <Icon.BagFill size={36}></Icon.BagFill>
+                                    <Icon.BagFill size={26}></Icon.BagFill>
                                 </Nav.Link>
                             </LinkContainer>
                         </Nav>

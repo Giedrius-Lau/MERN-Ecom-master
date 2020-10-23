@@ -175,7 +175,7 @@ a:hover {
 .card-img,
 .card-img-top,
 .card-img-bottom {
-    max-height: 217px;
+    height: 215px;
     object-fit: contain;
     background: #ffffff;
 }
@@ -190,6 +190,11 @@ a:hover {
 
     .card-title {
         margin: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        height: 42px;
+        overflow: hidden;
     }
 }
 
@@ -350,9 +355,23 @@ a:hover {
 }
 
 // SLider
+.slick-prev,
+.slick-next {
+    z-index: 1;
+}
 
 .slick-prev:before,
 .slick-next:before {
     color: var(--primary-fg);
     font-size: 50px;
+    z-index: 1000;
+    position: absolute;
+}
+
+.slick-prev:before {
+    left: 20px;
+}
+
+.slick-next:before {
+    right: 20px;
 }
