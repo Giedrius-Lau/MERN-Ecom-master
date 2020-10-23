@@ -1,5 +1,6 @@
 @import './style/fonts/stylesheet.css';
-
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
 :root {
     --primary-bg: #ffffff;
     --primary-fg: #000;
@@ -153,7 +154,9 @@ main {
 
 .product-link {
     border: 1px solid transparent;
-    min-height: 300px;
+    height: 340px;
+    max-width: 270px;
+    margin: 0 10px;
     background: var(--secondary-bg);
 }
 
@@ -168,6 +171,13 @@ a:hover {
 
 .card {
     padding: 0 !important;
+}
+.card-img,
+.card-img-top,
+.card-img-bottom {
+    max-height: 217px;
+    object-fit: contain;
+    background: #ffffff;
 }
 
 .card-body {
@@ -337,4 +347,12 @@ a:hover {
 .btn svg {
     margin-left: 20px;
     margin-top: -3px;
+}
+
+// SLider
+
+.slick-prev:before,
+.slick-next:before {
+    color: var(--primary-fg);
+    font-size: 50px;
 }
