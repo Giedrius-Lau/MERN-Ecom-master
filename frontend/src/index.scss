@@ -230,7 +230,7 @@ a:hover {
     color: #a452f5;
 }
 
-.dark-mode {
+.dark-mode-button {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
     cursor: pointer;
@@ -343,6 +343,10 @@ a:hover {
     object-fit: cover;
     width: 100%;
 }
+
+.description {
+    margin-top: 30px;
+}
 // Cart page
 .cart {
     margin-top: 110px;
@@ -374,4 +378,8 @@ a:hover {
 
 .slick-next:before {
     right: 20px;
+}
+
+.slick-slider {
+    overflow: hidden;
 }

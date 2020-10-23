@@ -30,9 +30,7 @@ const HomeScreen = () => {
                 <Message variant='danger'>{error}</Message>
             ) : (
                 <Fade duration={300} cascade>
-                    <Col>
-                        <ProductSlider products={products}></ProductSlider>
-                    </Col>
+                    <ProductSlider products={products}></ProductSlider>
                 </Fade>
             )}
         </>

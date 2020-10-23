@@ -58,29 +58,17 @@ const ProductScreen = ({ history, match }) => {
                                     <ListGroup.Item>
                                         <h3>{product.name}</h3>
                                     </ListGroup.Item>
-                                    <ListGroup.Item>
-                                        <Rating value={product.rating} text={` ${product.numReviews} reviews`}></Rating>
-                                    </ListGroup.Item>
+
                                     <ListGroup.Item>
                                         <h4>${product.price}</h4>
                                     </ListGroup.Item>
-                                    <ListGroup.Item>Description: {product.description}</ListGroup.Item>
                                 </ListGroup>
 
                                 <ListGroup>
                                     <ListGroup.Item>
                                         <Row>
-                                            <Col>Price: </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col>{product.price}</Col>
-                                        </Row>
-                                    </ListGroup.Item>
-                                    <ListGroup.Item>
-                                        <Row>
                                             <Col>Status: </Col>
-                                        </Row>
-                                        <Row>
+
                                             <Col>{product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}</Col>
                                         </Row>
                                     </ListGroup.Item>
@@ -115,6 +103,14 @@ const ProductScreen = ({ history, match }) => {
                                             <Icon.BagPlus size={18}></Icon.BagPlus>
                                         </Button>
                                     </ListGroup.Item>
+                                </ListGroup>
+                            </Col>
+                            <Col>
+                                <ListGroup className='description'>
+                                    <ListGroup.Item>
+                                        <Rating value={product.rating} text={` ${product.numReviews} reviews`}></Rating>
+                                    </ListGroup.Item>
+                                    <ListGroup.Item>Description: {product.description}</ListGroup.Item>
                                 </ListGroup>
                             </Col>
                         </Row>
