@@ -208,9 +208,17 @@ a:hover {
     }
 }
 
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+    color: #a452f5;
+}
+
 .dark-mode {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
+    cursor: pointer;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -323,4 +331,10 @@ a:hover {
 // Cart page
 .cart {
     margin-top: 110px;
+}
+
+// General override
+.btn svg {
+    margin-left: 20px;
+    margin-top: -3px;
 }

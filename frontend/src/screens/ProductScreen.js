@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Row, Col, Image, ListGroup, Button, Form } from 'react-bootstrap';
 import { listProductsDetails } from '../actions/productListActions';
+import * as Icon from 'react-bootstrap-icons';
 import Fade from 'react-reveal/Fade';
 
 import Rating from '../components/rating/Rating';
@@ -102,6 +103,7 @@ const ProductScreen = ({ history, match }) => {
                                             disabled={product.countInStock === 0}
                                         >
                                             Add To Cart
+                                            <Icon.BagPlus size={18}></Icon.BagPlus>
                                         </Button>
                                     </ListGroup.Item>
                                 </ListGroup>
