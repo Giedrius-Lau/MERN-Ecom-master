@@ -1,0 +1,40 @@
+.carousel-container {
+    margin-top: 140px;
+    visibility: hidden;
+}
+
+.carousel {
+    margin-top: -40px;
+    margin-bottom: 100px;
+    overflow: hidden;
+
+    img {
+        object-fit: cover;
+        height: 100%;
+    }
+}
+
+.carousel-image-container {
+    height: calc(100vh - 116px);
+}
+.carousel-caption {
+    top: 0;
+    left: 40px;
+    text-align: left;
+
+    h3 {
+        font-size: 3rem;
+        color: #ffffff;
+        font-family: 'tt_normsblack', Arial, sans-serif;
+        letter-spacing: -1px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    display: none;
+}

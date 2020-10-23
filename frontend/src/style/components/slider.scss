@@ -1,0 +1,25 @@
+// SLider
+.slick-prev,
+.slick-next {
+    z-index: 1;
+}
+
+.slick-prev:before,
+.slick-next:before {
+    color: var(--primary-fg);
+    font-size: 50px;
+    z-index: 1000;
+    position: absolute;
+}
+
+.slick-prev:before {
+    left: 22px;
+}
+
+.slick-next:before {
+    right: 22px;
+}
+
+.slick-slider {
+    overflow: hidden;
+}

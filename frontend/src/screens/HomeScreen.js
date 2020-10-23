@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Col } from 'react-bootstrap';
 import { listProducts } from '../actions/productListActions';
 import TextTransitions from '../components/transitions/TextTransitions';
 import Fade from 'react-reveal/Fade';

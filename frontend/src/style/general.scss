@@ -1,0 +1,64 @@
+:root {
+    --primary-bg: #ffffff;
+    --primary-fg: #000;
+    --secondary-bg: #ffffff;
+    --secondary-fg: #555;
+    --primary-btn-bg: #000;
+    --primary-btn-fg: #fff;
+    --secondary-btn-bg: #ff0000;
+    --secondary-btn-fg: #ffff00;
+    --image-opacity: 1;
+}
+
+.dark-mode {
+    --primary-bg: #282c35;
+    --primary-fg: #fff;
+    --secondary-bg: #1e2129;
+    --secondary-fg: #aaa;
+    --primary-btn-bg: #ddd;
+    --primary-btn-fg: #222;
+    --secondary-btn-bg: #780404;
+    --secondary-btn-fg: #baba6a;
+    --image-opacity: 0.85;
+}
+
+body {
+    font-family: 'tt_normsregular', Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    background: var(--primary-bg);
+    color: var(--primary-fg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+    color: var(--primary-fg);
+}
+
+a:hover,
+a:focus,
+.navbar-light .navbar-brand:hover,
+.navbar-light .navbar-brand:focus,
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+    color: var(--primary-fg);
+}
+
+.list-group-item {
+    background: var(--secondary-bg);
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--primary-fg);
+}
+
+main {
+    min-height: 80vw;
+    margin-top: 90px;
+}

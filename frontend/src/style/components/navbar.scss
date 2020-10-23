@@ -1,0 +1,41 @@
+.logo,
+.navbar-light .navbar-brand {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.5rem;
+    color: var(--primary-fg);
+}
+
+.small-logo {
+    font-family: 'Permanent Marker', cursive;
+}
+
+.navbar {
+    padding: 0.5rem 1rem;
+    box-shadow: 0 0 30px #00000010;
+    background: var(--secondary-bg) !important;
+
+    a {
+        color: var(--primary-fg);
+    }
+
+    .navbar-nav {
+        align-items: center;
+    }
+}
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+    color: #a452f5;
+}
+
+.dark-mode-button {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    cursor: pointer;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--primary-fg);
+}
