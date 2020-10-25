@@ -38,9 +38,6 @@ const ProductScreen = ({ history, match }) => {
     return (
         <>
             <NarrowContainer>
-                <Link className='btn btn-dark my-3' to='/'>
-                    Go back
-                </Link>
                 {loading ? (
                     <Loader></Loader>
                 ) : error ? (
