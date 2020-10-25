@@ -1,7 +1,12 @@
 // Product page
-.img-fluid {
-    object-fit: cover;
-    width: 100%;
+.image-container {
+    background: #ffffff;
+
+    .img-fluid {
+        object-fit: contain;
+        width: 100%;
+        max-height: 70vh;
+    }
 }
 
 .description {

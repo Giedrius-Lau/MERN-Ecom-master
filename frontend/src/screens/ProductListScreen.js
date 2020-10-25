@@ -27,7 +27,7 @@ const ProductListScreen = () => {
             ) : error ? (
                 <Message variant='danger'>{error}</Message>
             ) : (
-                <Fade duration={300} cascade>
+                <Fade duration={3000} cascade>
                     <Row>
                         {products.map((product) => {
                             return (

@@ -28,7 +28,7 @@ const HomeScreen = () => {
             ) : error ? (
                 <Message variant='danger'>{error}</Message>
             ) : (
-                <Fade duration={300} cascade>
+                <Fade duration={3000} cascade>
                     <ProductSlider products={products}></ProductSlider>
                 </Fade>
             )}

@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <header>
             <Navbar fixed='top' expand='lg' collapseOnSelect>
-                <Container>
+                <Container style={{ paddingLeft: 0, paddingRight: 0 }}>
                     <LinkContainer to='/'>
                         <Navbar.Brand className='logo'>MERN Shop</Navbar.Brand>
                     </LinkContainer>
@@ -23,12 +23,12 @@ const Header = () => {
                             <DarkMode></DarkMode>
                             <LinkContainer to='/login'>
                                 <Nav.Link>
-                                    <Icon.PersonFill size={26}></Icon.PersonFill>{' '}
+                                    <Icon.Person size={26}></Icon.Person>{' '}
                                 </Nav.Link>
                             </LinkContainer>
                             <LinkContainer to='/cart'>
                                 <Nav.Link>
-                                    <Icon.BagFill size={26}></Icon.BagFill>
+                                    <Icon.Bag size={26}></Icon.Bag>
                                 </Nav.Link>
                             </LinkContainer>
                         </Nav>

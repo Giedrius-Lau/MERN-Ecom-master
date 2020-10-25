@@ -43,11 +43,13 @@ const ProductScreen = ({ history, match }) => {
                 ) : error ? (
                     <Message variant='danger'>{error}</Message>
                 ) : (
-                    <Fade duration={300} cascade>
+                    <Fade duration={3000} cascade>
                         <Row>
                             <Col md={8}>
-                                <Fade duration={1000}>
-                                    <Image src={product.image} alt={product.name} fluid></Image>
+                                <Fade duration={3000}>
+                                    <div className='image-container'>
+                                        <Image src={product.image} alt={product.name} fluid></Image>
+                                    </div>
                                 </Fade>
                             </Col>
                             <Col md={4}>
