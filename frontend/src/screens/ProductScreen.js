@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { Row, Col, Image, ListGroup, Button, Form } from 'react-bootstrap';
 import { listProductsDetails, listProducts } from '../actions/productListActions';
 import * as Icon from 'react-bootstrap-icons';
@@ -45,14 +44,14 @@ const ProductScreen = ({ history, match }) => {
                 ) : (
                     <Fade duration={3000} cascade>
                         <Row>
-                            <Col md={8}>
+                            <Col md={7}>
                                 <Fade duration={3000}>
                                     <div className='image-container'>
                                         <Image src={product.image} alt={product.name} fluid></Image>
                                     </div>
                                 </Fade>
                             </Col>
-                            <Col md={4}>
+                            <Col md={5}>
                                 <ListGroup variant='flush'>
                                     <ListGroup.Item>
                                         <h3>{product.name}</h3>
