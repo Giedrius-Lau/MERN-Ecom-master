@@ -31,11 +31,13 @@ const HomeScreen = () => {
                         <Col md={6}>
                             <Link to='/products'>
                                 <img className='promo-image' src='/images/7.jpg' alt='promo-image1' />
+                                <h4>Styles to Empower You</h4>
                             </Link>
                         </Col>
                         <Col md={6}>
                             <Link to='/products'>
                                 <img className='promo-image' src='/images/8.jpg' alt='promo-image2' />
+                                <h4>Styles to Empower You</h4>
                             </Link>
                         </Col>
                     </Row>

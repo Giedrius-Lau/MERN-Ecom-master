@@ -1,0 +1,16 @@
+.product-list {
+    .col-xl-4 {
+        padding: 0;
+    }
+
+    .card-img,
+    .card-img-top,
+    .card-img-bottom {
+        height: initial;
+    }
+
+    .product-link {
+        height: initial;
+        max-width: initial;
+    }
+}

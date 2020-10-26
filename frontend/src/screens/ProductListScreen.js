@@ -7,6 +7,7 @@ import Fade from 'react-reveal/Fade';
 import Product from '../components/product/Product';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
+import NarrowContainer from '../components/NarrowContainer';
 
 const ProductListScreen = () => {
     const dispatch = useDispatch();
@@ -20,24 +21,28 @@ const ProductListScreen = () => {
 
     return (
         <>
-            <h3>Latest products</h3>
-            {loading ? (
-                <Loader></Loader>
-            ) : error ? (
-                <Message variant='danger'>{error}</Message>
-            ) : (
-                <Fade duration={3000} cascade>
-                    <Row>
-                        {products.map((product) => {
-                            return (
-                                <Col key={product._id} sm={6} md={4} lg={3} xl={2}>
-                                    <Product product={product}></Product>
-                                </Col>
-                            );
-                        })}
-                    </Row>
-                </Fade>
-            )}
+            <div className='product-list'>
+                {loading ? (
+                    <Loader></Loader>
+                ) : error ? (
+                    <Message variant='danger'>{error}</Message>
+                ) : (
+                    <Fade duration={3000} cascade>
+                        <NarrowContainer>
+                            <h3>Latest products</h3>
+                            <Row>
+                                {products.map((product) => {
+                                    return (
+                                        <Col key={product._id} sm={6} md={4} lg={4} xl={4}>
+                                            <Product product={product}></Product>
+                                        </Col>
+                                    );
+                                })}
+                            </Row>
+                        </NarrowContainer>
+                    </Fade>
+                )}
+            </div>
         </>
     );
 };
