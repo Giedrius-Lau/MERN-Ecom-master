@@ -10,7 +10,6 @@ import Loader from '../components/Loader';
 import Message from '../components/Message';
 import NarrowContainer from '../components/NarrowContainer';
 import ProductSlider from '../components/ProductSlider';
-import TextTransitions from '../components/transitions/TextTransitions';
 
 const ProductScreen = ({ history, match }) => {
     const [qty, setQty] = useState(1);
@@ -113,9 +112,6 @@ const ProductScreen = ({ history, match }) => {
                             </Col>
                         </Row>
                         <Row>
-                            <Col>
-                                <TextTransitions>Similar products</TextTransitions>
-                            </Col>
                             <Col>
                                 <ProductSlider products={products}></ProductSlider>
                             </Col>

@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../actions/productListActions';
-import TextTransitions from '../components/transitions/TextTransitions';
 import Fade from 'react-reveal/Fade';
 
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 import CarouselBlock from '../components/CarouselBlock';
 import ProductSlider from '../components/ProductSlider';
+import MediumContainer from '../components/MediumContainer';
 
 const HomeScreen = () => {
     const dispatch = useDispatch();
@@ -22,15 +22,15 @@ const HomeScreen = () => {
     return (
         <>
             <CarouselBlock></CarouselBlock>
-            <TextTransitions>Latest products</TextTransitions>
+            <Fade duration={3000}>
+                <MediumContainer></MediumContainer>
+            </Fade>
             {loading ? (
                 <Loader></Loader>
             ) : error ? (
                 <Message variant='danger'>{error}</Message>
             ) : (
-                <Fade duration={3000} cascade>
-                    <ProductSlider products={products}></ProductSlider>
-                </Fade>
+                <ProductSlider products={products}></ProductSlider>
             )}
         </>
     );

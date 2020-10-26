@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Col, Row } from 'react-bootstrap';
 import { listProducts } from '../actions/productListActions';
-import TextTransitions from '../components/transitions/TextTransitions';
 import Fade from 'react-reveal/Fade';
 
 import Product from '../components/product/Product';
@@ -21,7 +20,7 @@ const ProductListScreen = () => {
 
     return (
         <>
-            <TextTransitions>Latest products</TextTransitions>
+            <h3>Latest products</h3>
             {loading ? (
                 <Loader></Loader>
             ) : error ? (
