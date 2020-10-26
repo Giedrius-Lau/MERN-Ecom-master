@@ -28,7 +28,7 @@ const HomeScreen = () => {
             <Container>
                 <CarouselBlock></CarouselBlock>
             </Container>
-            <Fade duration={3000}>
+            <Fade duration={1500}>
                 <MediumContainer>
                     <Row>
                         <Col md={6}>
@@ -46,7 +46,7 @@ const HomeScreen = () => {
                     </Row>
                 </MediumContainer>
             </Fade>
-            <Fade duration={3000}>
+            <Fade duration={1500}>
                 {loading ? (
                     <Loader></Loader>
                 ) : error ? (
@@ -55,7 +55,7 @@ const HomeScreen = () => {
                     <ProductSlider products={products}></ProductSlider>
                 )}
             </Fade>
-            <Fade duration={3000}>
+            <Fade duration={1500}>
                 <Container>
                     <Row>
                         <Col>
@@ -77,7 +77,16 @@ const HomeScreen = () => {
                     </Row>
                 </Container>
             </Fade>
-            <Fade duration={3000}>
+            <Fade duration={1500}>
+                {loading ? (
+                    <Loader></Loader>
+                ) : error ? (
+                    <Message variant='danger'>{error}</Message>
+                ) : (
+                    <ProductSlider products={products}></ProductSlider>
+                )}
+            </Fade>
+            <Fade duration={1500}>
                 <MediumContainer>
                     <Row>
                         <Col md={6}>
