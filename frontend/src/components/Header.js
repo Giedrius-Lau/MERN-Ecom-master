@@ -8,7 +8,7 @@ const Header = () => {
     return (
         <header>
             <Navbar fixed='top' expand='lg' collapseOnSelect>
-                <Container style={{ paddingLeft: 0, paddingRight: 0 }}>
+                <div className='navbar-container'>
                     <LinkContainer to='/'>
                         <Navbar.Brand className='logo'>MERN Shop</Navbar.Brand>
                     </LinkContainer>
@@ -33,7 +33,7 @@ const Header = () => {
                             </LinkContainer>
                         </Nav>
                     </Navbar.Collapse>
-                </Container>
+                </div>
             </Navbar>
         </header>
     );

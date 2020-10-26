@@ -101,3 +101,15 @@
     margin-left: auto;
     margin-bottom: 50px;
 }
+
+.container,
+.narrow-container,
+.medium-container {
+    margin-bottom: 100px;
+}
+
+.container .container,
+.container .narrow-container,
+.container .medium-container {
+    padding: 0;
+}
