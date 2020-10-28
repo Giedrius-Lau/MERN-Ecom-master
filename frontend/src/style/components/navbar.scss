@@ -34,13 +34,6 @@
     align-items: center;
 }
 
-.navbar-light .navbar-nav .show > .nav-link,
-.navbar-light .navbar-nav .active > .nav-link,
-.navbar-light .navbar-nav .nav-link.show,
-.navbar-light .navbar-nav .nav-link.active {
-    color: initial;
-}
-
 .dark-mode-button {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
@@ -49,4 +42,8 @@
 
 .navbar-light .navbar-nav .nav-link {
     color: var(--primary-fg);
+}
+
+.dropdown-menu {
+    background: var(--secondary-bg);
 }
