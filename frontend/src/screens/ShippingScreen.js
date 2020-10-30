@@ -38,8 +38,7 @@ const ShippingScreen = ({ history }) => {
                         onChange={(e) => setAddress(e.target.value)}
                     ></Form.Control>
                 </Form.Group>
-            </Form>
-            <Form onSubmit={submitHandler}>
+
                 <Form.Group controlId='city'>
                     <Form.Label>City</Form.Label>
                     <Form.Control
@@ -50,8 +49,7 @@ const ShippingScreen = ({ history }) => {
                         onChange={(e) => setCity(e.target.value)}
                     ></Form.Control>
                 </Form.Group>
-            </Form>
-            <Form onSubmit={submitHandler}>
+
                 <Form.Group controlId='postalCode'>
                     <Form.Label>Postal Code</Form.Label>
                     <Form.Control
@@ -62,8 +60,7 @@ const ShippingScreen = ({ history }) => {
                         onChange={(e) => setPostalCode(e.target.value)}
                     ></Form.Control>
                 </Form.Group>
-            </Form>
-            <Form onSubmit={submitHandler}>
+
                 <Form.Group controlId='country'>
                     <Form.Label>Country</Form.Label>
                     <Form.Control
