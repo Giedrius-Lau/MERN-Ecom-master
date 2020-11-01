@@ -13,7 +13,6 @@ import {
     USER_UPDATE_PROFILE_FAIL,
     USER_UPDATE_PROFILE_SUCCESS,
     USER_UPDATE_PROFILE_REQUEST,
-    USER_UPDATE_PROFILE_RESET,
 } from '../constants/userConstants';
 
 export const login = (email, password) => async (dispatch) => {
@@ -27,7 +26,11 @@ export const login = (email, password) => async (dispatch) => {
                 'Content-Type': 'application/json',
             },
         };
-        const { data } = await axios.post('/api/users/login', { email, password }, config);
+        const { data } = await axios.post(
+            '/api/users/login',
+            { email, password },
+            config
+        );
 
         dispatch({
             type: USER_LOGIN_SUCCESS,
@@ -38,7 +41,10 @@ export const login = (email, password) => async (dispatch) => {
     } catch (error) {
         dispatch({
             type: USER_LOGIN_FAIL,
-            payload: error.response && error.response.data.mesage ? error.response.data.message : error.message,
+            payload:
+                error.response && error.response.data.mesage
+                    ? error.response.data.message
+                    : error.message,
         });
     }
 };
@@ -61,7 +67,11 @@ export const register = (email, password, name) => async (dispatch) => {
                 'Content-Type': 'application/json',
             },
         };
-        const { data } = await axios.post('/api/users', { email, password, name }, config);
+        const { data } = await axios.post(
+            '/api/users',
+            { email, password, name },
+            config
+        );
 
         dispatch({
             type: USER_REGISTER_SUCCESS,
@@ -77,7 +87,10 @@ export const register = (email, password, name) => async (dispatch) => {
     } catch (error) {
         dispatch({
             type: USER_REGISTER_FAIL,
-            payload: error.response && error.response.data.mesage ? error.response.data.message : error.message,
+            payload:
+                error.response && error.response.data.mesage
+                    ? error.response.data.message
+                    : error.message,
         });
     }
 };
@@ -107,7 +120,10 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
     } catch (error) {
         dispatch({
             type: USER_DETAILS_FAIL,
-            payload: error.response && error.response.data.mesage ? error.response.data.message : error.message,
+            payload:
+                error.response && error.response.data.mesage
+                    ? error.response.data.message
+                    : error.message,
         });
     }
 };
@@ -145,7 +161,10 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
     } catch (error) {
         dispatch({
             type: USER_UPDATE_PROFILE_FAIL,
-            payload: error.response && error.response.data.mesage ? error.response.data.message : error.message,
+            payload:
+                error.response && error.response.data.mesage
+                    ? error.response.data.message
+                    : error.message,
         });
     }
 };

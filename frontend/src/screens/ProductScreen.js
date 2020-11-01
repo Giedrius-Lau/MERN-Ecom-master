@@ -66,7 +66,9 @@ const ProductScreen = ({ history, match }) => {
                                         <Row>
                                             <Col>Status: </Col>
 
-                                            <Col>{product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}</Col>
+                                            <Col>
+                                                {product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
+                                            </Col>
                                         </Row>
                                     </ListGroup.Item>
                                     {product.countInStock > 0 && (
@@ -91,6 +93,7 @@ const ProductScreen = ({ history, match }) => {
                                     )}
                                     <ListGroup.Item>
                                         <Button
+                                            variant='dark'
                                             onClick={addToCartHandler}
                                             className='btn-block'
                                             type='button'
@@ -105,7 +108,10 @@ const ProductScreen = ({ history, match }) => {
                             <Col>
                                 <ListGroup className='description'>
                                     <ListGroup.Item>
-                                        <Rating value={product.rating} text={` ${product.numReviews} reviews`}></Rating>
+                                        <Rating
+                                            value={product.rating}
+                                            text={` ${product.numReviews} reviews`}
+                                        ></Rating>
                                     </ListGroup.Item>
                                     <ListGroup.Item>Description: {product.description}</ListGroup.Item>
                                 </ListGroup>
