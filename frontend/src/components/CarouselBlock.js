@@ -31,10 +31,10 @@ const CarouselBlock = () => {
                         </div>
                         <Carousel.Caption>
                             <div ref={carouselHeading}>
-                                <h3 className='carousel-heading'>Camera</h3>
+                                <h3 className='carousel-heading'>Sneakers.</h3>
                             </div>
 
-                            <p ref={carouselParagraph}>Camera slide.</p>
+                            <p ref={carouselParagraph}>Up to 40% Off</p>
                             <Button ref={carouselButton} variant='primary'>
                                 Shop
                             </Button>

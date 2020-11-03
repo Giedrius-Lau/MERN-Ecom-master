@@ -34,11 +34,18 @@ const Header = () => {
                             <DarkMode></DarkMode>
 
                             {userInfo ? (
-                                <NavDropdown title={userInfo.name} id='username'>
+                                <NavDropdown
+                                    title={userInfo.name}
+                                    id='username'
+                                >
                                     <LinkContainer to='/profile'>
-                                        <NavDropdown.Item>Profile</NavDropdown.Item>
+                                        <NavDropdown.Item>
+                                            Profile
+                                        </NavDropdown.Item>
                                     </LinkContainer>
-                                    <NavDropdown.Item onClick={logoutHandler}>Log Out</NavDropdown.Item>
+                                    <NavDropdown.Item onClick={logoutHandler}>
+                                        Log Out
+                                    </NavDropdown.Item>
                                 </NavDropdown>
                             ) : (
                                 <LinkContainer to='/login'>
