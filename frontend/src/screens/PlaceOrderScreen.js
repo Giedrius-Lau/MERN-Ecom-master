@@ -8,6 +8,17 @@ import CheckoutSteps from '../components/CheckoutSteps';
 const PlaceOrderScreen = () => {
     const cart = useSelector((state) => state.cart);
 
+    const addDecimals = (num) => {
+        return (Math.round(num * 100) / 100).toFixed(2);
+    };
+    //Calculate prices
+    cart.itemsPrice = addDecimals(cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0));
+    cart.shippingPrice = addDecimals(cart.itemsPrice > 100 ? 0 : 10);
+    cart.taxPrice = addDecimals(Number((0.15 * cart.itemsPrice).toFixed(2)));
+    cart.totalPrice = addDecimals(
+        (Number(cart.itemsPrice) + Number(cart.shippingPrice) + Number(cart.taxPrice)).toFixed(2)
+    );
+
     const placeOrderHandler = () => {};
 
     return (
@@ -17,18 +28,21 @@ const PlaceOrderScreen = () => {
                 <Col md={8}>
                     <ListGroup variant='flush'>
                         <ListGroup.Item>
-                            <h2>Shipping</h2>
-                            <p>
-                                <strong>Address: </strong>
-                                {cart.shippingAddress.address}, {cart.shippingAddress.city},{' '}
-                                {cart.shippingAddress.postalCode}, {cart.shippingAddress.country}
-                            </p>
-                        </ListGroup.Item>
-
-                        <ListGroup.Item>
-                            <h2>Payment Method</h2>
-                            <strong>Method: </strong>
-                            {cart.paymentMethod}
+                            <Row>
+                                <Col>
+                                    <h5>Shipping</h5>
+                                    <p>
+                                        <strong>Address: </strong>
+                                        {cart.shippingAddress.address}, {cart.shippingAddress.city},{' '}
+                                        {cart.shippingAddress.postalCode}, {cart.shippingAddress.country}
+                                    </p>
+                                </Col>
+                                <Col>
+                                    <h5>Payment Method</h5>
+                                    <strong>Method: </strong>
+                                    {cart.paymentMethod}
+                                </Col>
+                            </Row>
                         </ListGroup.Item>
 
                         <ListGroup.Item>
