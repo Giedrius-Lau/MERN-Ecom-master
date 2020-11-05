@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap';
+import { Row, Col, ListGroup, Image, Card } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
 import CheckoutSteps from '../components/CheckoutSteps';
-import { createOrder } from '../actions/orderActions';
+import { getOrderDetails } from '../actions/orderActions';
 
 const OrderScreen = ({ history, match }) => {
     const dispatch = useDispatch();
-    const cart = useSelector((state) => state.cart);
+    const orderDetails = useSelector((state) => state.orderDetails);
+
+    console.log(orderDetails);
 
     useEffect(() => {
-        // dispatch(getOrder(match.params.id));
+        dispatch(getOrderDetails(match.params.id));
     }, [dispatch, match]);
 
     // const orderCreate = useSelector((state) => state.orderCreate);
