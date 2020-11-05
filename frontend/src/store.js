@@ -10,7 +10,7 @@ import {
     userDetailsReducer,
     userUpdateProfileReducer,
 } from './reducers/userReducers';
-import { orderCreateReduser } from './reducers/orderReducers';
+import { orderCreateReduser, orderDetailsReducer } from './reducers/orderReducers';
 
 const reducer = combineReducers({
     productList: productListReducer,
@@ -21,6 +21,7 @@ const reducer = combineReducers({
     userDetails: userDetailsReducer,
     userUpdateProfile: userUpdateProfileReducer,
     orderCreate: orderCreateReduser,
+    orderDetails: orderDetailsReducer,
 });
 
 const cartItemsFromStorage = localStorage.getItem('cartItems')
@@ -40,6 +41,10 @@ const initialState = {
 
 const middleware = [thunk];
 
-const store = createStore(reducer, initialState, composeWithDevTools(applyMiddleware(...middleware)));
+const store = createStore(
+    reducer,
+    initialState,
+    composeWithDevTools(applyMiddleware(...middleware))
+);
 
 export default store;
