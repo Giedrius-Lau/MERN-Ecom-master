@@ -48,8 +48,8 @@ const CartScreen = ({ match, location, history }) => {
                                 </Message>
                             ) : (
                                 <ListGroup variant='flush'>
-                                    {cartItems.map((item) => (
-                                        <Fade duration={3000} cascade>
+                                    {cartItems.map((item, index) => (
+                                        <Fade duration={3000} cascade key={index}>
                                             <ListGroup.Item key={item.product}>
                                                 <Row>
                                                     <Col md={2}>
@@ -79,7 +79,9 @@ const CartScreen = ({ match, location, history }) => {
                                                                 )
                                                             }
                                                         >
-                                                            {[...Array(item.countInStock).keys()].map((x) => (
+                                                            {[
+                                                                ...Array(item.countInStock).keys(),
+                                                            ].map((x) => (
                                                                 <option key={x + 1} value={x + 1}>
                                                                     {x + 1}
                                                                 </option>
@@ -109,7 +111,8 @@ const CartScreen = ({ match, location, history }) => {
                                 <ListGroup variant='flush'>
                                     <ListGroup.Item>
                                         <h3>
-                                            Subtotal {cartItems.reduce((acc, item) => acc + item.qty, 0)}{' '}
+                                            Subtotal{' '}
+                                            {cartItems.reduce((acc, item) => acc + item.qty, 0)}
                                             items
                                         </h3>
                                         $
