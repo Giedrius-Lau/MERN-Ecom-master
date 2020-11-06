@@ -17,9 +17,21 @@ const CarouselBlock = () => {
             { opacity: 0, y: -100, scaleX: 0.9, scaleY: 0.9 },
             { opacity: 1, y: 0, scaleX: 1, scaleY: 1, duration: 1, ease: Power2.easeInOut }
         )
-            .fromTo(carouselHeading.current, { opacity: 0, y: -100 }, { opacity: 1, y: 0, duration: 0.3 })
-            .fromTo(carouselParagraph.current, { opacity: 0, x: -200 }, { opacity: 1, x: 0, duration: 0.3 })
-            .fromTo(carouselButton.current, { opacity: 0, x: -200 }, { opacity: 1, x: 0, duration: 0.3 });
+            .fromTo(
+                carouselHeading.current,
+                { opacity: 0, y: -100 },
+                { opacity: 1, y: 0, duration: 0.3 }
+            )
+            .fromTo(
+                carouselParagraph.current,
+                { opacity: 0, x: -200 },
+                { opacity: 1, x: 0, duration: 0.3 }
+            )
+            .fromTo(
+                carouselButton.current,
+                { opacity: 0, x: -200 },
+                { opacity: 1, x: 0, duration: 0.3 }
+            );
     }, [carouselHeading, carouselImage, carouselParagraph, carouselButton]);
     return (
         <>
