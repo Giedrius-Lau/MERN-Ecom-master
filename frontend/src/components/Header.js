@@ -28,20 +28,15 @@ const Header = () => {
                         <Nav className='ml-auto'>
                             <LinkContainer to='/products'>
                                 <Nav.Link>
-                                    <Icon.Search size={26}></Icon.Search>{' '}
+                                    <Icon.Search size={18}></Icon.Search>{' '}
                                 </Nav.Link>
                             </LinkContainer>
                             <DarkMode></DarkMode>
 
                             {userInfo ? (
-                                <NavDropdown
-                                    title={userInfo.name}
-                                    id='username'
-                                >
+                                <NavDropdown title={userInfo.name} id='username'>
                                     <LinkContainer to='/profile'>
-                                        <NavDropdown.Item>
-                                            Profile
-                                        </NavDropdown.Item>
+                                        <NavDropdown.Item>Profile</NavDropdown.Item>
                                     </LinkContainer>
                                     <NavDropdown.Item onClick={logoutHandler}>
                                         Log Out
@@ -50,14 +45,14 @@ const Header = () => {
                             ) : (
                                 <LinkContainer to='/login'>
                                     <Nav.Link>
-                                        <Icon.Person size={26}></Icon.Person>{' '}
+                                        <Icon.Person size={20}></Icon.Person>{' '}
                                     </Nav.Link>
                                 </LinkContainer>
                             )}
 
                             <LinkContainer to='/cart'>
                                 <Nav.Link>
-                                    <Icon.Bag size={26}></Icon.Bag>
+                                    <Icon.Bag size={20}></Icon.Bag>
                                 </Nav.Link>
                             </LinkContainer>
                         </Nav>

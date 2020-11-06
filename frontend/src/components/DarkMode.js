@@ -27,10 +27,12 @@ const DarkMode = () => {
         document.body.classList.remove('dark-mode');
     }
 
-    window.matchMedia('(prefers-color-scheme: dark)').addListener((e) => (e.matches ? enableDarkMode() : disableDarkMode()));
+    window
+        .matchMedia('(prefers-color-scheme: dark)')
+        .addListener((e) => (e.matches ? enableDarkMode() : disableDarkMode()));
     return (
         <div className='dark-mode-button' onClick={() => toggleDarkTheme()}>
-            {darkMode ? <Icon.Sun size={26}></Icon.Sun> : <Icon.Moon size={26}></Icon.Moon>}
+            {darkMode ? <Icon.Sun size={20}></Icon.Sun> : <Icon.Moon size={20}></Icon.Moon>}
         </div>
     );
 };
