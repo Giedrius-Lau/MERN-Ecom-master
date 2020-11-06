@@ -5,9 +5,10 @@ import {
     ORDER_DETAILS_REQUEST,
     ORDER_DETAILS_SUCCESS,
     ORDER_DETAILS_FAIL,
+    ORDER_CREATE_RESET,
 } from '../constants/orderConstants';
 
-export const orderCreateReduser = (state = {}, action) => {
+export const orderCreateReducer = (state = {}, action) => {
     switch (action.type) {
         case ORDER_CREATE_REQUEST:
             return {
@@ -24,6 +25,8 @@ export const orderCreateReduser = (state = {}, action) => {
                 loading: false,
                 error: action.payload,
             };
+        case ORDER_CREATE_RESET:
+            return {};
         default:
             return state;
     }
@@ -36,6 +39,7 @@ export const orderDetailsReducer = (
     switch (action.type) {
         case ORDER_DETAILS_REQUEST:
             return {
+                ...state,
                 loading: true,
             };
         case ORDER_DETAILS_SUCCESS:

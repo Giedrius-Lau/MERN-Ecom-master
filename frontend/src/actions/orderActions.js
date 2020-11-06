@@ -33,19 +33,15 @@ export const createOrder = (order) => async (dispatch, getState) => {
             payload: data,
         });
 
-        dispatch({
-            type: USER_LOGIN_SUCCESS,
-            payload: data,
-        });
-
-        localStorage.setItem('userInfo', JSON.stringify(data));
+        localStorage.removeItem('cartItems');
     } catch (error) {
+        const message =
+            error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message;
         dispatch({
             type: ORDER_CREATE_FAIL,
-            payload:
-                error.response && error.response.data.mesage
-                    ? error.response.data.message
-                    : error.message,
+            payload: message,
         });
     }
 };
@@ -70,12 +66,14 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
             payload: data,
         });
     } catch (error) {
+        const message =
+            error.response && error.response.data.message
+                ? error.response.data.message
+                : error.message;
+
         dispatch({
             type: ORDER_DETAILS_FAIL,
-            payload:
-                error.response && error.response.data.mesage
-                    ? error.response.data.message
-                    : error.message,
+            payload: message,
         });
     }
 };
