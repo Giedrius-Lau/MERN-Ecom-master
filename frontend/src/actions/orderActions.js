@@ -7,7 +7,6 @@ import {
     ORDER_DETAILS_REQUEST,
     ORDER_DETAILS_FAIL,
 } from '../constants/orderConstants';
-import { USER_LOGIN_SUCCESS } from '../constants/userConstants';
 
 export const createOrder = (order) => async (dispatch, getState) => {
     try {
