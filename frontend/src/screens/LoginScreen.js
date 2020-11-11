@@ -6,6 +6,7 @@ import Message from '../components/Message';
 import Loader from '../components/Loader';
 import FormContainer from '../components/FormContainer';
 import { login } from '../actions/userActions';
+import SButton from '../components/SButton';
 
 const LoginScreen = ({ location, history }) => {
     const [email, setEmail] = useState('');
@@ -55,10 +56,14 @@ const LoginScreen = ({ location, history }) => {
                 <Button type='submit' variant='primary'>
                     Sign In
                 </Button>
+                <SButton>Sign In</SButton>
             </Form>
             <Row className='py-3'>
                 <Col>
-                    New Customer? <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>Register</Link>
+                    New Customer?{' '}
+                    <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>
+                        Register
+                    </Link>
                 </Col>
             </Row>
         </FormContainer>
