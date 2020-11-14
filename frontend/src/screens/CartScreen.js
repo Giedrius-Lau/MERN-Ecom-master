@@ -57,7 +57,6 @@ const CartScreen = ({ match, location, history }) => {
                                                             src={item.image}
                                                             alt={item.name}
                                                             fluid
-                                                            rounded
                                                         ></Image>
                                                     </Col>
                                                     <Col md={3}>
