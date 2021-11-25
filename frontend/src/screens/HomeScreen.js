@@ -47,13 +47,7 @@ const HomeScreen = () => {
                 </MediumContainer>
             </Fade>
             <Fade duration={1500}>
-                {loading ? (
-                    <Loader></Loader>
-                ) : error ? (
-                    <Message variant='danger'>{error}</Message>
-                ) : (
-                    <ProductSlider products={products}></ProductSlider>
-                )}
+                {loading ? <Loader></Loader> : error ? <Message variant='danger'>{error}</Message> : <ProductSlider products={products}></ProductSlider>}
             </Fade>
             <Fade duration={1500}>
                 <Container>
@@ -78,13 +72,7 @@ const HomeScreen = () => {
                 </Container>
             </Fade>
             <Fade duration={1500}>
-                {loading ? (
-                    <Loader></Loader>
-                ) : error ? (
-                    <Message variant='danger'>{error}</Message>
-                ) : (
-                    <ProductSlider products={products}></ProductSlider>
-                )}
+                {loading ? <Loader></Loader> : error ? <Message variant='danger'>{error}</Message> : <ProductSlider products={products}></ProductSlider>}
             </Fade>
             <Fade duration={1500}>
                 <MediumContainer>

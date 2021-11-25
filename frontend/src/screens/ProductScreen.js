@@ -41,10 +41,10 @@ const ProductScreen = ({ history, match }) => {
                 ) : error ? (
                     <Message variant='danger'>{error}</Message>
                 ) : (
-                    <Fade duration={3000} cascade>
+                    <Fade duration={300} cascade>
                         <Row>
                             <Col md={7}>
-                                <Fade duration={3000}>
+                                <Fade duration={300}>
                                     <div className='image-container'>
                                         <Image src={product.image} alt={product.name} fluid></Image>
                                     </div>
@@ -66,9 +66,7 @@ const ProductScreen = ({ history, match }) => {
                                         <Row>
                                             <Col>Status: </Col>
 
-                                            <Col>
-                                                {product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}
-                                            </Col>
+                                            <Col>{product.countInStock > 0 ? 'In Stock' : 'Out Of Stock'}</Col>
                                         </Row>
                                     </ListGroup.Item>
                                     {product.countInStock > 0 && (
@@ -76,11 +74,7 @@ const ProductScreen = ({ history, match }) => {
                                             <Row>
                                                 <Col>Qty</Col>
                                                 <Col>
-                                                    <Form.Control
-                                                        as='select'
-                                                        value={qty}
-                                                        onChange={(e) => setQty(e.target.value)}
-                                                    >
+                                                    <Form.Control as='select' value={qty} onChange={(e) => setQty(e.target.value)}>
                                                         {[...Array(product.countInStock).keys()].map((x) => (
                                                             <option key={x + 1} value={x + 1}>
                                                                 {x + 1}
@@ -108,10 +102,7 @@ const ProductScreen = ({ history, match }) => {
                             <Col>
                                 <ListGroup className='description'>
                                     <ListGroup.Item>
-                                        <Rating
-                                            value={product.rating}
-                                            text={` ${product.numReviews} reviews`}
-                                        ></Rating>
+                                        <Rating value={product.rating} text={` ${product.numReviews} reviews`}></Rating>
                                     </ListGroup.Item>
                                     <ListGroup.Item>Description: {product.description}</ListGroup.Item>
                                 </ListGroup>

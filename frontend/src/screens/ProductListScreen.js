@@ -27,7 +27,7 @@ const ProductListScreen = () => {
                 ) : error ? (
                     <Message variant='danger'>{error}</Message>
                 ) : (
-                    <Fade duration={3000} cascade>
+                    <Fade duration={300} cascade>
                         <NarrowContainer>
                             <h3>Latest products</h3>
                             <Row>
