@@ -2,15 +2,7 @@ import asyncHandler from 'express-async-handler';
 import Order from '../models/OrderModel.js';
 
 const addOrderItems = asyncHandler(async (req, res) => {
-    const {
-        orderItems,
-        shippingAddress,
-        paymentMethod,
-        itemsPrice,
-        taxPrice,
-        shippingPrice,
-        totalPrice,
-    } = req.body;
+    const { orderItems, shippingAddress, paymentMethod, itemsPrice, taxPrice, shippingPrice, totalPrice } = req.body;
 
     if (orderItems && orderItems.length === 0) {
         res.status(400);
@@ -50,7 +42,8 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
 
     if (order) {
         res.json(order);
-        (order.isPaid = true), (order.paidAt = Date.now());
+        order.isPaid = true;
+        order.paidAt = Date.now();
         order.paymentResult = {
             id: req.body.id,
             status: req.body.status,
@@ -66,4 +59,11 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
     }
 });
 
-export { addOrderItems, getOrderById, updateOrderToPaid };
+const getMyOrders = asyncHandler(async (req, res) => {
+    // Only find orders where user is logged in, search by user: req.user.id
+    const order = await Order.find({ user: req.user.id });
+
+    res.json(orders);
+});
+
+export { addOrderItems, getOrderById, updateOrderToPaid, getMyOrders };
