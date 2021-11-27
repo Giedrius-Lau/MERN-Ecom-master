@@ -109,7 +109,9 @@ export const payOrder = (orderId, paymentResult) => async (dispatch, getState) =
 
 export const listMyOrders = () => async (dispatch, getState) => {
     try {
-        dispatch({ type: ORDER_LIST_MY_REQUEST });
+        dispatch({
+            type: ORDER_LIST_MY_REQUEST,
+        });
 
         const {
             userLogin: { userInfo },
@@ -122,6 +124,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
         };
 
         const { data } = await axios.get(`/api/orders/myorders`, config);
+
         dispatch({
             type: ORDER_LIST_MY_SUCCESS,
             payload: data,

@@ -60,10 +60,7 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
 });
 
 const getMyOrders = asyncHandler(async (req, res) => {
-    // Only find orders where user is logged in, search by user: req.user.id
-    const order = await Order.find({ user: req.user.id });
-
+    const orders = await Order.find({ user: req.user._id });
     res.json(orders);
 });
-
 export { addOrderItems, getOrderById, updateOrderToPaid, getMyOrders };
