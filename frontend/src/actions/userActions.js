@@ -17,6 +17,7 @@ import {
     USER_LIST_FAIL,
     USER_LIST_SUCCESS,
     USER_LIST_REQUEST,
+    USER_LIST_RESET,
 } from '../constants/userConstants';
 
 import { ORDER_LIST_MY_RESET } from '../constants/orderConstants';
@@ -54,6 +55,7 @@ export const logout = () => (dispatch) => {
         dispatch({ type: USER_LOGOUT });
         dispatch({ type: USER_DETAILS_RESET });
         dispatch({ type: ORDER_LIST_MY_RESET });
+        dispatch({ type: USER_LIST_RESET });
     } catch (error) {}
 };
 
@@ -179,12 +181,14 @@ export const listUsers = () => async (dispatch, getState) => {
             type: USER_LIST_SUCCESS,
             payload: data,
         });
-
-        localStorage.setItem('userInfo', JSON.stringify(data));
     } catch (error) {
+        const message = error.response && error.response.data.message ? error.response.data.message : error.message;
+        if (message === 'Not authorized, token failed') {
+            dispatch(logout());
+        }
         dispatch({
             type: USER_LIST_FAIL,
-            payload: error.response && error.response.data.mesage ? error.response.data.message : error.message,
+            payload: message,
         });
     }
 };
