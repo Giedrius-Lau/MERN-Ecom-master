@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Table, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
@@ -24,7 +24,7 @@ const UserListScreen = ({ history }) => {
         } else {
             history.push('/login');
         }
-    }, [dispatch, history, successDelete]);
+    }, [dispatch, history, successDelete, userInfo]);
 
     const deleteHandler = (id) => {
         if (window.confirm('Are you sure')) {
@@ -33,10 +33,10 @@ const UserListScreen = ({ history }) => {
     };
 
     return (
-        <div>
+        <>
             <h1>Users</h1>
             {loading ? (
-                <Loader></Loader>
+                <Loader />
             ) : error ? (
                 <Message variant='danger'>{error}</Message>
             ) : (
@@ -44,9 +44,9 @@ const UserListScreen = ({ history }) => {
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Admin</th>
+                            <th>NAME</th>
+                            <th>EMAIL</th>
+                            <th>ADMIN</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -66,7 +66,7 @@ const UserListScreen = ({ history }) => {
                                     )}
                                 </td>
                                 <td>
-                                    <LinkContainer to={`/user/${user._id}/edit`}>
+                                    <LinkContainer to={`/admin/user/${user._id}/edit`}>
                                         <Button variant='light' className='btn-sm'>
                                             <i className='fas fa-edit'></i>
                                         </Button>
@@ -80,7 +80,7 @@ const UserListScreen = ({ history }) => {
                     </tbody>
                 </Table>
             )}
-        </div>
+        </>
     );
 };
 
