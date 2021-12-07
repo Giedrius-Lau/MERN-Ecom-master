@@ -73,6 +73,7 @@ const ProductListScreen = ({ history, match }) => {
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>IMAGE</th>
                             <th>NAME</th>
                             <th>PRICE</th>
                             <th>CATEGORY</th>
@@ -84,6 +85,9 @@ const ProductListScreen = ({ history, match }) => {
                         {products.map((product) => (
                             <tr key={product._id}>
                                 <td>{product._id}</td>
+                                <td>
+                                    <img style={{ width: '50px' }} src={product.image} alt={product.name}></img>
+                                </td>
                                 <td>{product.name}</td>
                                 <td>${product.price}</td>
                                 <td>{product.category}</td>
