@@ -4,6 +4,7 @@ import { Row, Col, Image, ListGroup, Button, Form } from 'react-bootstrap';
 import { listProductsDetails, listProducts } from '../actions/productListActions';
 import * as Icon from 'react-bootstrap-icons';
 import Fade from 'react-reveal/Fade';
+import { PRODUCT_DETAILS_RESET } from '../constants/productConstants';
 
 import Rating from '../components/rating/Rating';
 import Loader from '../components/Loader';
@@ -19,6 +20,8 @@ const ProductScreen = ({ history, match }) => {
     const { loading, error, product } = productDetails;
 
     useEffect(() => {
+        dispatch({ type: PRODUCT_DETAILS_RESET });
+
         dispatch(listProductsDetails(match.params.id));
     }, [dispatch, match]);
 
