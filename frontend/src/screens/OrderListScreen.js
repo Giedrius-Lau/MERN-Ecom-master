@@ -12,8 +12,6 @@ const UserListScreen = ({ history }) => {
     const orderList = useSelector((state) => state.orderList);
     const { loading, error, orders } = orderList;
 
-    console.log(orders);
-
     const userLogin = useSelector((state) => state.userLogin);
     const { userInfo } = userLogin;
 
@@ -67,31 +65,12 @@ const UserListScreen = ({ history }) => {
                                     )}
                                 </td>
                                 <td>
-                                    <LinkContainer to={`/admin/order/${order._id}/edit`}>
+                                    <LinkContainer to={`/order/${order._id}/edit`}>
                                         <Button variant='light' className='btn-sm'>
                                             <i className='fas fa-edit'></i>
                                         </Button>
                                     </LinkContainer>
                                 </td>
-
-                                {/* <td>{order.name}</td>
-                                <td>
-                                    <a href={`mailto:${order.email}`}>{order.email}</a>
-                                </td>
-                                <td>
-                                    {order.isAdmin ? (
-                                        <i className='fas fa-check' style={{ color: 'green' }}></i>
-                                    ) : (
-                                        <i className='fas fa-times' style={{ color: 'red' }}></i>
-                                    )}
-                                </td>
-                                <td>
-                                    <LinkContainer to={`/admin/order/${order._id}/edit`}>
-                                        <Button variant='light' className='btn-sm'>
-                                            <i className='fas fa-edit'></i>
-                                        </Button>
-                                    </LinkContainer>
-                                </td> */}
                             </tr>
                         ))}
                     </tbody>
