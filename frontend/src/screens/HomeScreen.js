@@ -7,17 +7,16 @@ import { listProducts, listTopProducts } from '../actions/productListActions';
 import Fade from 'react-reveal/Fade';
 import { Container } from 'react-bootstrap';
 
-import Loader from '../components/Loader';
-import Message from '../components/Message';
 import CarouselBlock from '../components/CarouselBlock';
 import ProductSlider from '../components/ProductSlider';
 import MediumContainer from '../components/MediumContainer';
+import Meta from './../components/Meta';
 
 const HomeScreen = () => {
     const dispatch = useDispatch();
 
     const productList = useSelector((state) => state.productList);
-    const { loading, error, products } = productList;
+    const { products } = productList;
 
     const productTopRated = useSelector((state) => state.productTopRated);
     const { products: topProducts } = productTopRated;
@@ -29,6 +28,7 @@ const HomeScreen = () => {
 
     return (
         <>
+            <Meta></Meta>
             <Container>
                 <CarouselBlock></CarouselBlock>
             </Container>

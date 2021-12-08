@@ -41,6 +41,7 @@ const ProductListingScreen = ({ match }) => {
                             ) : (
                                 <h3>Latest products</h3>
                             )}
+                            {products.length < 1 && <h1>No products found :(</h1>}
                             <Row>
                                 {products.map((product) => {
                                     return (
