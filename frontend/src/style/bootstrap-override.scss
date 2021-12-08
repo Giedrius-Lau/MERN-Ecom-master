@@ -33,6 +33,11 @@
     max-width: 270px;
     margin: 0 auto;
     background: var(--secondary-bg);
+
+    img {
+        height: 270px !important;
+        background: #f6f6f6;
+    }
 }
 
 .product-link:hover {

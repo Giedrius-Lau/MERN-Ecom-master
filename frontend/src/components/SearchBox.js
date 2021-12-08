@@ -11,7 +11,7 @@ const SearchBox = ({ history }) => {
             history.push(`/search/${keyword}`);
             setKeyword('');
         } else {
-            history.push('/');
+            history.push('/products');
         }
     };
 

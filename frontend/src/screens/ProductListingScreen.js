@@ -8,18 +8,21 @@ import Product from '../components/product/Product';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 import NarrowContainer from '../components/NarrowContainer';
+import Paginate from '../components/Paginate';
 
 const ProductListingScreen = ({ match }) => {
     const keyword = match.params.keyword;
 
+    const pageNumber = match.params.pageNumber || 1;
+
     const dispatch = useDispatch();
 
     const productList = useSelector((state) => state.productList);
-    const { loading, error, products } = productList;
+    const { loading, error, products, pages, page } = productList;
 
     useEffect(() => {
-        dispatch(listProducts(keyword));
-    }, [dispatch, keyword]);
+        dispatch(listProducts(keyword, pageNumber));
+    }, [dispatch, keyword, pageNumber]);
 
     return (
         <>
@@ -47,6 +50,7 @@ const ProductListingScreen = ({ match }) => {
                                     );
                                 })}
                             </Row>
+                            <Paginate pages={pages} page={page} keyword={keyword ? keyword : ''}></Paginate>
                         </NarrowContainer>
                     </Fade>
                 )}
