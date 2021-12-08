@@ -4,7 +4,7 @@ import Slider from 'react-slick';
 import Product from '../components/product/Product';
 import NarrowContainer from './NarrowContainer';
 
-const ProductSlider = (props) => {
+const ProductSlider = ({ products, title }) => {
     const settings = {
         infinite: true,
         speed: 500,
@@ -42,10 +42,10 @@ const ProductSlider = (props) => {
     return (
         <>
             <NarrowContainer>
-                <h3 className='slider-heading'>Latest products</h3>
+                <h3 className='slider-heading'>{title}</h3>
 
                 <Slider {...settings}>
-                    {props.products.map((product, key) => {
+                    {products.map((product, key) => {
                         return <Product key={key} product={product}></Product>;
                     })}
                 </Slider>

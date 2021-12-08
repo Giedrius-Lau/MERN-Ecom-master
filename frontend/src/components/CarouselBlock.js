@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Carousel, Button } from 'react-bootstrap';
 import { Power2, TimelineMax, TweenMax } from 'gsap';
+import { Link } from 'react-router-dom';
 
 const CarouselBlock = () => {
     let carousel = useRef(null);
@@ -17,21 +18,9 @@ const CarouselBlock = () => {
             { opacity: 0, y: -100, scaleX: 0.9, scaleY: 0.9 },
             { opacity: 1, y: 0, scaleX: 1, scaleY: 1, duration: 1, ease: Power2.easeInOut }
         )
-            .fromTo(
-                carouselHeading.current,
-                { opacity: 0, y: -100 },
-                { opacity: 1, y: 0, duration: 0.3 }
-            )
-            .fromTo(
-                carouselParagraph.current,
-                { opacity: 0, x: -200 },
-                { opacity: 1, x: 0, duration: 0.3 }
-            )
-            .fromTo(
-                carouselButton.current,
-                { opacity: 0, x: -200 },
-                { opacity: 1, x: 0, duration: 0.3 }
-            );
+            .fromTo(carouselHeading.current, { opacity: 0, y: -100 }, { opacity: 1, y: 0, duration: 0.3 })
+            .fromTo(carouselParagraph.current, { opacity: 0, x: -200 }, { opacity: 1, x: 0, duration: 0.3 })
+            .fromTo(carouselButton.current, { opacity: 0, x: -200 }, { opacity: 1, x: 0, duration: 0.3 });
     }, [carouselHeading, carouselImage, carouselParagraph, carouselButton]);
     return (
         <>
@@ -47,9 +36,11 @@ const CarouselBlock = () => {
                             </div>
 
                             <p ref={carouselParagraph}>Up to 40% Off</p>
-                            <Button ref={carouselButton} variant='primary'>
-                                Shop
-                            </Button>
+                            <Link to='/search/nike'>
+                                <Button ref={carouselButton} variant='primary'>
+                                    Shop
+                                </Button>
+                            </Link>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -60,7 +51,9 @@ const CarouselBlock = () => {
                         <Carousel.Caption>
                             <h3>Apple</h3>
                             <p>Apple slide.</p>
-                            <Button variant='primary'>Shop</Button>
+                            <Link to='/search/iphone'>
+                                <Button variant='primary'>Shop</Button>
+                            </Link>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
@@ -71,7 +64,9 @@ const CarouselBlock = () => {
                         <Carousel.Caption>
                             <h3>Lens</h3>
                             <p>Lens slide.</p>
-                            <Button variant='primary'>Shop</Button>
+                            <Link to='/search/cannon'>
+                                <Button variant='primary'>Shop</Button>
+                            </Link>
                         </Carousel.Caption>
                     </Carousel.Item>
                 </Carousel>

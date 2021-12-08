@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Carousel, Button } from 'react-bootstrap';
 import { Row, Col } from 'react-bootstrap';
-import { listProducts } from '../actions/productListActions';
+import { listProducts, listTopProducts } from '../actions/productListActions';
 import Fade from 'react-reveal/Fade';
 import { Container } from 'react-bootstrap';
 
@@ -19,7 +19,11 @@ const HomeScreen = () => {
     const productList = useSelector((state) => state.productList);
     const { loading, error, products } = productList;
 
+    const productTopRated = useSelector((state) => state.productTopRated);
+    const { products: topProducts } = productTopRated;
+
     useEffect(() => {
+        dispatch(listTopProducts());
         dispatch(listProducts());
     }, [dispatch]);
 
@@ -46,9 +50,7 @@ const HomeScreen = () => {
                     </Row>
                 </MediumContainer>
             </Fade>
-            <Fade duration={1500}>
-                {loading ? <Loader></Loader> : error ? <Message variant='danger'>{error}</Message> : <ProductSlider products={products}></ProductSlider>}
-            </Fade>
+            <Fade duration={1500}>{products && <ProductSlider products={products} title='All products'></ProductSlider>}</Fade>
             <Fade duration={1500}>
                 <Container>
                     <Row>
@@ -62,8 +64,9 @@ const HomeScreen = () => {
                                         <div>
                                             <h3 className='carousel-heading'>Kybrid S2 'What The Inline'</h3>
                                         </div>
-
-                                        <Button variant='primary'>Shop</Button>
+                                        <Link to='/search/nike'>
+                                            <Button variant='primary'>Shop</Button>
+                                        </Link>
                                     </Carousel.Caption>
                                 </Carousel.Item>
                             </Carousel>
@@ -71,9 +74,7 @@ const HomeScreen = () => {
                     </Row>
                 </Container>
             </Fade>
-            <Fade duration={1500}>
-                {loading ? <Loader></Loader> : error ? <Message variant='danger'>{error}</Message> : <ProductSlider products={products}></ProductSlider>}
-            </Fade>
+            <Fade duration={1500}>{topProducts && <ProductSlider products={topProducts} title={'Top products'}></ProductSlider>}</Fade>
             <Fade duration={1500}>
                 <MediumContainer>
                     <Row>
