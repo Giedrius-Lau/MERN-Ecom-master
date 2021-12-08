@@ -9,15 +9,17 @@ import Loader from '../components/Loader';
 import Message from '../components/Message';
 import NarrowContainer from '../components/NarrowContainer';
 
-const ProductListScreen = () => {
+const ProductListingScreen = ({ match }) => {
+    const keyword = match.params.keyword;
+
     const dispatch = useDispatch();
 
     const productList = useSelector((state) => state.productList);
     const { loading, error, products } = productList;
 
     useEffect(() => {
-        dispatch(listProducts());
-    }, [dispatch]);
+        dispatch(listProducts(keyword));
+    }, [dispatch, keyword]);
 
     return (
         <>
@@ -29,7 +31,13 @@ const ProductListScreen = () => {
                 ) : (
                     <Fade duration={300} cascade>
                         <NarrowContainer>
-                            <h3>Latest products</h3>
+                            {keyword ? (
+                                <h4>
+                                    Search results for: <strong>{keyword}</strong>
+                                </h4>
+                            ) : (
+                                <h3>Latest products</h3>
+                            )}
                             <Row>
                                 {products.map((product) => {
                                     return (
@@ -47,4 +55,4 @@ const ProductListScreen = () => {
     );
 };
 
-export default ProductListScreen;
+export default ProductListingScreen;
