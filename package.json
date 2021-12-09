@@ -1,6 +1,9 @@
 {
   "name": "mern-ecom-master",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.x"
+  },
   "description": "Ecommerce website",
   "main": "index.js",
   "type": "module",
@@ -38,8 +41,5 @@
   "devDependencies": {
     "concurrently": "^5.3.0",
     "nodemon": "^2.0.4"
-  },
-  "engines": {
-    "node": ">=12.19.0"
   }
 }
