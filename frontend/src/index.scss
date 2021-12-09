@@ -85,18 +85,11 @@
     }
 
     &:hover:before {
-        background: repeating-linear-gradient(
-                -45deg,
-                transparent,
-                transparent 2px,
-                rgba(0, 0, 0, 0.03) 2px,
-                rgba(0, 0, 0, 0.03) 3.5px
-            ),
-            #fbc94a;
+        background: repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(0, 0, 0, 0.03) 2px, rgba(0, 0, 0, 0.03) 3.5px), #fbc94a;
         border-color: #fbc94a;
     }
 
     &:hover:after {
-        border-color: #000b8c;
+        border-color: #001a8c;
     }
 }
