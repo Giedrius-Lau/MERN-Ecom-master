@@ -77,6 +77,10 @@ a:hover {
 }
 
 main {
-    margin-top: 90px;
+    margin-top: 110px;
     min-height: calc(100vh - 246px);
+
+    @media (min-width: 768px) {
+        margin-top: 90px;
+    }
 }

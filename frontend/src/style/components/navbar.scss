@@ -1,8 +1,12 @@
 .logo,
 .navbar-light .navbar-brand {
     font-family: 'Permanent Marker', cursive;
-    font-size: 2rem;
+    font-size: 1rem;
     color: var(--primary-fg);
+
+    @media (min-width: 767px) {
+        font-size: 2rem;
+    }
 }
 
 .small-logo {
@@ -46,4 +50,49 @@
 
 .dropdown-menu {
     background: var(--secondary-bg);
+}
+
+.search-form.form-inline {
+    margin-left: auto;
+    position: fixed;
+    width: 100%;
+    top: 57px;
+    border: 1px solid;
+    left: 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+
+    @media (min-width: 768px) {
+        position: static;
+        border: 0;
+    }
+
+    .form-control {
+        width: 100%;
+
+        @media (min-width: 768px) {
+            width: auto;
+        }
+    }
+
+    button.search-button.btn.btn-secondary {
+        padding: 0;
+        height: 45px;
+        width: 57px;
+        border-left: 1px solid;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        position: relative;
+
+        @media (min-width: 768px) {
+            border: 1px solid var(--primary-fg);
+            left: -30px;
+        }
+
+        svg {
+            margin: 0 auto;
+        }
+    }
 }

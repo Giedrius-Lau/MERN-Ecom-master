@@ -29,11 +29,6 @@ const Header = () => {
                     <Navbar.Collapse id='basic-navbar-nav'>
                         <Route render={({ history }) => <SearchBox history={history}></SearchBox>}></Route>
                         <Nav className='ml-auto'>
-                            <LinkContainer to='/products'>
-                                <Nav.Link>
-                                    <Icon.Search size={18}></Icon.Search>{' '}
-                                </Nav.Link>
-                            </LinkContainer>
                             <DarkMode></DarkMode>
 
                             {userInfo ? (
