@@ -18,78 +18,78 @@
 @import './style/pages/homepage.scss';
 @import './style/pages/productList.scss';
 
-.sbtn {
-    -moz-appearance: none;
-    appearance: none;
-    position: relative;
-    display: inline-block;
-    line-height: 1;
-    padding: 0.5em 1.25em;
-    background: transparent;
-    outline: 0;
-    border-radius: 200px;
-    border: 2px solid #fff;
-    font-weight: 500;
-    font-family: 'poppins', 'Helvetica';
-    color: #000b8c;
-    text-align: center;
-    cursor: pointer;
-    user-select: none;
-    text-decoration: none;
-    transition-property: background, border, color, transform, opacity;
-    transition-duration: 0.3s;
-    align-self: flex-start;
-    z-index: 0;
+// .sbtn {
+//     -moz-appearance: none;
+//     appearance: none;
+//     position: relative;
+//     display: inline-block;
+//     line-height: 1;
+//     padding: 0.5em 1.25em;
+//     background: transparent;
+//     outline: 0;
+//     border-radius: 200px;
+//     border: 2px solid #fff;
+//     font-weight: 500;
+//     font-family: 'poppins', 'Helvetica';
+//     color: #000b8c;
+//     text-align: center;
+//     cursor: pointer;
+//     user-select: none;
+//     text-decoration: none;
+//     transition-property: background, border, color, transform, opacity;
+//     transition-duration: 0.3s;
+//     align-self: flex-start;
+//     z-index: 0;
 
-    &::before {
-        position: absolute;
-        content: '';
-        left: 50%;
-        bottom: 50%;
-        display: block;
-        width: 100%;
-        height: 100%;
-        background: #fff;
-        border: 2px solid #fff;
-        border-radius: 200px;
-        box-sizing: content-box;
-        transform: translate(-50%, 50%);
-        z-index: -1;
-        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
-        transition-duration: 0.3s;
-        transition-property: all;
-        background: #fbc94a;
-        border-color: #fbc94a;
-    }
+//     &::before {
+//         position: absolute;
+//         content: '';
+//         left: 50%;
+//         bottom: 50%;
+//         display: block;
+//         width: 100%;
+//         height: 100%;
+//         background: #fff;
+//         border: 2px solid #fff;
+//         border-radius: 200px;
+//         box-sizing: content-box;
+//         transform: translate(-50%, 50%);
+//         z-index: -1;
+//         box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+//         transition-duration: 0.3s;
+//         transition-property: all;
+//         background: #fbc94a;
+//         border-color: #fbc94a;
+//     }
 
-    &:hover {
-        transform: translateY(-5px);
-    }
+//     &:hover {
+//         transform: translateY(-5px);
+//     }
 
-    &::after {
-        position: absolute;
-        content: '';
-        left: 50%;
-        top: 50%;
-        display: block;
-        width: 100%;
-        height: 100%;
-        border: 2px solid #fff;
-        border-radius: 200px;
-        box-sizing: content-box;
-        transform: translate(-50%, -50%);
-        z-index: 1;
-        transition-duration: 0.3s;
-        transition-property: all;
-        border-color: #fbc94a;
-    }
+//     &::after {
+//         position: absolute;
+//         content: '';
+//         left: 50%;
+//         top: 50%;
+//         display: block;
+//         width: 100%;
+//         height: 100%;
+//         border: 2px solid #fff;
+//         border-radius: 200px;
+//         box-sizing: content-box;
+//         transform: translate(-50%, -50%);
+//         z-index: 1;
+//         transition-duration: 0.3s;
+//         transition-property: all;
+//         border-color: #fbc94a;
+//     }
 
-    &:hover:before {
-        background: repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(0, 0, 0, 0.03) 2px, rgba(0, 0, 0, 0.03) 3.5px), #fbc94a;
-        border-color: #fbc94a;
-    }
+//     &:hover:before {
+//         background: repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(0, 0, 0, 0.03) 2px, rgba(0, 0, 0, 0.03) 3.5px), #fbc94a;
+//         border-color: #fbc94a;
+//     }
 
-    &:hover:after {
-        border-color: #001a8c;
-    }
-}
+//     &:hover:after {
+//         border-color: #001a8c;
+//     }
+// }
